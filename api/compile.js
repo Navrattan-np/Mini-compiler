@@ -7,8 +7,11 @@ export default async function handler(req, res) {
     const { script, language, versionIndex } = req.body;
 
     // We will securely inject your keys through the Vercel dashboard later
-    const clientId = process.env.JDOODLE_CLIENT_ID;
-    const clientSecret = process.env.JDOODLE_CLIENT_SECRET;
+    // const clientId = process.env.JDOODLE_CLIENT_ID;
+    // const clientSecret = process.env.JDOODLE_CLIENT_SECRET;
+
+    const clientId = "a76deae0c8950bc01178b120b97bfabf";
+    const clientSecret = "2a2240c2d66ff55799d8f50d0d3c4232f4467d668062f186819a0e7d0fc4fa0";
 
     try {
         const response = await fetch("https://api.jdoodle.com/v1/execute", {
