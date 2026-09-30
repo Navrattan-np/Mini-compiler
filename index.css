@@ -1,0 +1,106 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    overflow: hidden; /* Prevents the whole page from scrolling */
+}
+
+main {
+    flex-grow: 1;
+    padding-bottom: 15px; /* Keeps it slightly off the bottom edge */
+}
+
+main .row {
+    height: 100%;
+    margin: 0; /* Prevents Bootstrap's default horizontal scrolling */
+    padding:0;
+}
+.col1, .col2 {
+    height: 100%;
+}
+
+.col1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.col2 {
+    display: flex;
+    flex-direction: column;
+}
+
+#run-button, #output-header {
+    width: 100%;
+    background-color: rgb(175, 202, 210);
+    padding: 5px 15px;
+    
+    /* Using flexbox ensures the button and text sit perfectly in the vertical center */
+    display: flex;
+    align-items: center;
+    min-height: 50px; /* Forces both bars to be exactly this tall */
+
+    border-bottom: 2px solid #9ebac5;
+}
+
+#run-button {
+    justify-content: flex-end; 
+
+    border-right: 3px solid lightgrey;
+}
+
+#run-button .btn {
+    font-size: 18px; 
+    font-weight: 500;
+    padding: 4px 20px; /* widens the button*/
+}
+
+#output-header {
+    justify-content: flex-start; 
+    font-weight: 600;
+    font-size: 20px;
+    color: #2c3e50; 
+}
+
+#output-text {
+    flex-grow: 1; /* Stretches to fill the bottom just like the textarea */
+    width: 100%;
+    background-color: #e4f1fb;
+    padding: 15px;
+    margin: 0;
+    
+    
+    font-family: monospace;
+    color: #333;
+    overflow-y: auto; /* scrollbar if size increases */
+    white-space: pre-wrap; /* wraping long string  */
+}
+
+#code {
+    flex-grow: 1;
+    width: 100%;
+    resize: none; /* Disables manual resizing corner */
+    border: none; /*Makes it look cleaner*/
+    background-color: aliceblue;
+    border-width:0px 3px 0px 0px;
+    border-style: solid;
+    border-color: lightgrey;
+    padding: 15px;
+    outline: none; /* Removes the blue border when clicked */
+}
+
+.col1,
+.col2 {
+    height: 100%;
+}
+@media (max-width: 767.98px) {
+    .col1 {
+        height: 66.66%; /* 2 parts editor */
+    }
+    .col2 {
+        height: 33.33%; /* 1 part output */
+    }
+    #code {
+        border-width: 0px 0px 3px 0px; /* Moves the border to the bottom when stacked on mobile */
+    }
+}
